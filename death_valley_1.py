@@ -21,15 +21,16 @@ dates = [] #want to give dates
 '''
 x = datetime.strptime("2018-07-01", "%Y-%m-%d")
 print(x)
-'''
+
 for index, column_header in enumerate(header_row):
     tmin = column_header['TMIN']
     tmax = column_header['TMAX']
+'''
 
 for row in csv_file:
     try:
-        high = int(row[tmax])
-        low = int(row[tmin])
+        high = int(row[4])
+        low = int(row[5])
         current_date = datetime.strptime(row[2], "%Y-%m-%d") #index of date, formats the date
     except ValueError:
         print(f"Missing data for {current_date}")
